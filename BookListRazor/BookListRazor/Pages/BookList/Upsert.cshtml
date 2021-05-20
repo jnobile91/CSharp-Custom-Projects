@@ -2,14 +2,17 @@
 @model BookListRazor.Pages.BookList.UpsertModel
 
 <br />
-<h2 class="text-info">Edit Book</h2>
+<h2 class="text-info">@(Model.Book.Id!=0? "Edit" : "Create") Book</h2> @* Checks for object ID, if already exists displays "Edit", otherwise displays "Create" *@
 <br />
 
 <div class="border container" style="padding:30px;">
     <form method="post">
-        @*Identifies and assigns hidden Id field, allowing the program to identify
-            the primary key of the book that the user is attempting to edit. *@
-        <input type="hidden" asp-for="Book.Id" />
+        @* Checks if object has an ID property, if yes it will edit the existing entry.
+            Otherwise will create a new entry. *@
+        @if (Model.Book.Id != 0)
+        {
+            <input type="hidden" asp-for="Book.Id" />
+        }
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
             <div class="col-3">
@@ -40,8 +43,8 @@
         </div>
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Update" class="btn btn-primary form-control" />
-            </div>
+                <button type="submit" class="btn btn-primary form-control">@(Model.Book.Id !=0 ? "Update" : "Create")</button>
+</div>
             <div class="col-3">
                 <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
             </div>

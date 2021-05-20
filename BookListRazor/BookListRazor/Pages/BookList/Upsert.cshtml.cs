@@ -13,7 +13,7 @@ namespace BookListRazor.Pages.BookList
     {
         private ApplicationDbContext _db;
 
-        public EditModel(ApplicationDbContext db)
+        public UpsertModel(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -50,13 +50,14 @@ namespace BookListRazor.Pages.BookList
         {
             if (ModelState.IsValid)
             {
-                // Adds assigned book (using "Id") to queue,
-                // then reassigns properties from the "Edit" window
-                var BookFromDb = await _db.Book.FindAsync(Book.Id);
-                BookFromDb.Name = Book.Name;
-                BookFromDb.Author = Book.Author;
-                BookFromDb.ISBN = Book.ISBN;
-
+                if(Book.Id == 0)
+                {
+                    _db.Book.Add(Book); // Adds new book
+                }
+                else
+                {
+                    _db.Update(Book); // Updates every property in the object
+                }
                 await _db.SaveChangesAsync(); // Changes info in DB
                 return RedirectToPage("Index"); // Returns user to the Index page after editing an object in the DB
             }
