@@ -12,7 +12,7 @@
 
     <div class="col-12 border p-3 mt-3">
         <form method="post">
-            @if (Model.Books.Count() > 0)
+            @if(Model.Books.Count() > 0)
             {
                 <table class="table table-striped border">
                     <tr class="table-secondary">
@@ -30,23 +30,23 @@
 
                         </th>
                     </tr>
-                    @foreach (var item in Model.Books)
+                    @foreach(var item in Model.Books)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(m => item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(m => item.Author)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(m => item.ISBN)
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">Delete</button>
-                                <a class="btn btn-success btn-sm text-white">Edit</a>
-                            </td>
-                        </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.ISBN)
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <a class="btn btn-success btn-sm text-white">Edit</a>
+                    </td>
+                </tr>
                     }
                 </table>
             }
