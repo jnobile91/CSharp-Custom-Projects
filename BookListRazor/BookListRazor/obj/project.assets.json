@@ -6297,11 +6297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jnobi\\Documents\\School\\Custom Projects\\BookListRazor\\BookListRazor\\BookListRazor.csproj",
+      "projectUniqueName": "F:\\School\\Custom Projects\\BookListRazor\\BookListRazor\\BookListRazor.csproj",
       "projectName": "BookListRazor",
-      "projectPath": "C:\\Users\\jnobi\\Documents\\School\\Custom Projects\\BookListRazor\\BookListRazor\\BookListRazor.csproj",
+      "projectPath": "F:\\School\\Custom Projects\\BookListRazor\\BookListRazor\\BookListRazor.csproj",
       "packagesPath": "C:\\Users\\jnobi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jnobi\\Documents\\School\\Custom Projects\\BookListRazor\\BookListRazor\\obj\\",
+      "outputPath": "F:\\School\\Custom Projects\\BookListRazor\\BookListRazor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jnobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
